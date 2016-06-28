@@ -12,7 +12,7 @@ const config = {
   },
   output: {
     path: './dist',
-    publicPath: '/dist/',
+    /*publicPath: '/dist/',*/
     filename: '[name]-[hash].js'
   },
   devtool: 'source-map',
@@ -79,5 +79,10 @@ if (isProd) {
     }
   }));
 }
+
+config.plugins.push(new Webpack.DefinePlugin({
+  __PROD__: isProd,
+  __DEV__: !isProd
+}));
 
 module.exports = config;
