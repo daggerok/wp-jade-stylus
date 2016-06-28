@@ -1,4 +1,5 @@
-# [wp-jade-stylus](https://github.com/daggerok/wp-jade-stylus)
+wp-jade-stylus [![travis build](https://travis-ci.org/daggerok/wp-jade-stylus.svg?branch=master)](https://travis-ci.org/daggerok/wp-jade-stylus)
+==============
 
 ```sh
 npm start

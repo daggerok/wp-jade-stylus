@@ -78,6 +78,8 @@ if (isProd) {
       warnings: false
     }
   }));
+  config.plugins.push(new Webpack.optimize.DedupePlugin());
+  config.plugins.push(new Webpack.optimize.DedupePlugin());
 }
 
 config.plugins.push(new Webpack.DefinePlugin({
