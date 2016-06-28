@@ -13,6 +13,6 @@ import './main.styl';
 
 const div = $('<div>');
 
-$('#app').html(`<p>${name} is ${age} years old.</p>`);
+$('#app').html(`<p>${name} is ${age} years old...</p>`);
 
 console.log(div.text());

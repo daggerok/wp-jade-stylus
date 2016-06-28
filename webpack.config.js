@@ -1,15 +1,19 @@
 const HtmlPlugin = require('html-webpack-plugin');
 const Autoprefixer = require('autoprefixer-stylus');
+const Webpack = require('webpack');
 const Path = require('path');
+
 const include   = [Path.resolve(process.cwd(), 'src')];
 const bsInclude = [Path.resolve(process.cwd(), './node_modules/bootstrap/dist')];
+
 const config = {
   entry: {
     app: ['babel-polyfill', './src/main']
   },
   output: {
     path: './dist',
-    filename: '[name].js'
+    publicPath: '/dist/',
+    filename: '[name]-[hash].js'
   },
   devtool: 'source-map',
   module: {
@@ -65,5 +69,15 @@ const config = {
     })]
   }
 };
+
+const isProd = process.argv[4] === '-p';
+
+if (isProd) {
+  config.plugins.push(new Webpack.optimize.UglifyJsPlugin({
+    compress: {
+      warnings: false
+    }
+  }));
+}
 
 module.exports = config;

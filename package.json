@@ -4,6 +4,7 @@
   "description": "webpack jade stylus",
   "main": "index.js",
   "scripts": {
+    "dev": "NODE_ENV=dev webpack-dev-server --content-base=./dist --inline",
     "start": "npm run webpack -- -w",
     "build": "npm run webpack -- -p",
     "webpack": "webpack -c --process"
@@ -26,7 +27,8 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^2.1.1",
     "url-loader": "^0.5.7",
-    "webpack": "^1.13.1"
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
     "babel-polyfill": "^6.9.1",
